@@ -897,6 +897,12 @@ extern "C" {
     ) -> u64;
 }
 extern "C" {
+    pub fn crocksdb_map_property_float_value(
+        info: *mut crocksdb_map_property_t,
+        propname: *const libc::c_char,
+    ) -> f64;
+}
+extern "C" {
     pub fn crocksdb_property_value(
         db: *mut crocksdb_t,
         propname: *const libc::c_char,

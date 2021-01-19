@@ -1238,6 +1238,16 @@ uint64_t crocksdb_map_property_int_value(crocksdb_map_property_t* info,
   }
 }
 
+double crocksdb_map_property_float_value(crocksdb_map_property_t* info,
+                                         const char* propname) {
+  auto iter = info->rep.find(std::string(propname));
+  if (iter != info->rep.end()) {
+    return (double)stoll(iter->second, nullptr);
+  } else {
+    return 0;
+  }
+}
+
 char* crocksdb_property_value(crocksdb_t* db, const char* propname) {
   std::string tmp;
   if (db->rep->GetProperty(Slice(propname), &tmp)) {

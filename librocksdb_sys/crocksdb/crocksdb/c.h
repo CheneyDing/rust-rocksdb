@@ -447,6 +447,9 @@ extern C_ROCKSDB_LIBRARY_API char* crocksdb_map_property_value(
 extern C_ROCKSDB_LIBRARY_API uint64_t crocksdb_map_property_int_value(
     crocksdb_map_property_t* info, const char* propname);
 
+extern C_ROCKSDB_LIBRARY_API double crocksdb_map_property_float_value(
+    crocksdb_map_property_t* info, const char* propname);
+
 extern C_ROCKSDB_LIBRARY_API char* crocksdb_property_value(
     crocksdb_t* db, const char* propname);
 

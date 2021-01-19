@@ -143,6 +143,15 @@ impl MapProperty {
             return value as u64;
         }
     }
+
+    pub fn get_property_float_value(&self, property: &str) -> f64 {
+        let propname = CString::new(property.as_bytes()).unwrap();
+        unsafe {
+            let value =
+                crocksdb_ffi::crocksdb_map_property_float_value(self.inner, propname.as_ptr());
+            return value as f64;
+        }
+    }
 }
 
 pub struct DB {

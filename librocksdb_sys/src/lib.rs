@@ -1466,6 +1466,11 @@ extern "C" {
         propname: *const c_char,
     ) -> u64;
 
+    pub fn crocksdb_map_property_float_value(
+        info: *const DBMapProperty,
+        propname: *const c_char,
+    ) -> f64;
+
     pub fn crocksdb_property_value(db: *mut DBInstance, propname: *const c_char) -> *mut c_char;
     pub fn crocksdb_property_value_cf(
         db: *mut DBInstance,
